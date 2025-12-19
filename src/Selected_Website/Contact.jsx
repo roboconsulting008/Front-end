@@ -1,9 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Phone, Mail, MapPin, ArrowRight } from 'lucide-react';
+import axios from 'axios';
 
 const Contact = () => {
   const [visibleSections, setVisibleSections] = useState(new Set());
   const observerRef = useRef(null);
+
+   // 🔹 Form state
+   const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState(null); // success | error
 
   useEffect(() => {
     observerRef.current = new IntersectionObserver(
@@ -25,6 +37,32 @@ const Contact = () => {
 
     return () => observerRef.current?.disconnect();
   }, []);
+
+
+    // 🔹 Handle input change
+    const handleChange = (e) => {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+  
+    // 🔹 Handle submit
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setLoading(true);
+      setStatus(null);
+  
+      try {
+        await axios.post('https://back-end-8rv1.onrender.com/api/contact', formData); // backend route
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(()=>{
+          setStatus('')
+        },2000)
+      } catch (error) {
+        setStatus('error');
+      } finally {
+        setLoading(false);
+      }
+    };
 
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 relative overflow-hidden" data-animate>
@@ -71,11 +109,15 @@ const Contact = () => {
 
           <div className={`transform transition-all duration-1000 ${visibleSections.has('contact') ? 'translate-x-0 opacity-100' : 'translate-x-10 opacity-0'}`}>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20 hover:bg-white/15 transition-all duration-300">
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6 ">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="group">
                     <input
                       type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
                       placeholder="Your Name"
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 group-hover:bg-white/25"
                     />
@@ -83,6 +125,10 @@ const Contact = () => {
                   <div className="group">
                     <input
                       type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
                       placeholder="Your Email"
                       className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 group-hover:bg-white/25"
                     />
@@ -91,6 +137,10 @@ const Contact = () => {
                 <div className="group">
                   <input
                     type="text"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
                     placeholder="Subject"
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 group-hover:bg-white/25"
                   />
@@ -98,17 +148,31 @@ const Contact = () => {
                 <div className="group">
                   <textarea
                     rows="5"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
                     placeholder="Your Message"
                     className="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all duration-300 group-hover:bg-white/25 resize-none"
                   />
                 </div>
                 <button
                   type="submit"
+                  disabled={loading}
                   className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-4 px-6 rounded-lg font-semibold hover:shadow-xl transform hover:scale-105 transition-all duration-300 group"
                 >
-                  Send Message
-                  <ArrowRight className="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" />
+                   {loading ? 'Sending...' : 'Send Message'}
+                   {!loading && <ArrowRight className="w-5 h-5 ml-2 inline group-hover:translate-x-1 transition-transform" />}
+                  
                 </button>
+
+                 {/* 🔹 Status message */}
+                 {status === 'success' && (
+                  <p className="text-green-400 text-center text-sm">Message sent successfully.</p>
+                )}
+                {status === 'error' && (
+                  <p className="text-red-400 text-center text-sm">Something went wrong. Try again.</p>
+                )}
               </form>
             </div>
           </div>
