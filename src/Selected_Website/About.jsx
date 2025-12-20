@@ -71,12 +71,12 @@ const About = () => {
             <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-blue-800" />
             <span className="text-blue-800 text-xs sm:text-sm font-medium">ABOUT SCEPTERRA</span>
           </div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl max-w-5xl mx-auto font-bold mb-4 sm:mb-6 px-2">
+          <h2 className="text-3xl  lg:text-5xl  max-w-5xl  mx-auto font-bold mb-4 md:mb-6 md:px-2">
             Empowering
             <span className="bg-gradient-to-r text-blue-600 bg-clip-text"> Small & Medium Businesses </span>
             with the Right Technology
           </h2>
-          <p className="text-base sm:text-lg text-gray-500 max-w-4xl mx-auto leading-relaxed px-2">
+          <p className="text-md text-gray-500 max-w-4xl mx-auto leading-relaxed md:px-2">
             Scepterra is a consulting-led IT and operations services firm focused on supporting small and medium-sized businesses in navigating technology, process, and operational challenges.
           </p>
         </div>
@@ -87,25 +87,25 @@ const About = () => {
           <div className={`space-y-6 sm:space-y-8 transform transition-all duration-1000 ${visibleSections.has('about') ? 'translate-x-0 opacity-100' : '-translate-x-10 opacity-0'}`}>
             {/* Enterprise Expertise */}
             <div>
-              <h2 className="text-xl  md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <h2 className="text-2xl  md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
                 Enterprise Expertise, Tailored for SMBs
               </h2>
-              <p className="text-md md:text-base text-gray-600 leading-relaxed mb-4 sm:mb-6">
+              <p className="text-lg  text-gray-600 leading-relaxed mb-4 md:mb-6">
                 We understand that SMBs need solutions that are practical, cost-conscious, and easy to manage — not overly complex enterprise frameworks. Our approach is built on real-world experience, ensuring that technology investments directly support business growth and day-to-day operations.
               </p>
-              <p className="text-md md:text-base text-gray-600 leading-relaxed">
+              <p className="text-lg text-gray-600 leading-relaxed">
                 With 27+ years of enterprise IT and consulting experience, Scepterra brings large-organization discipline and best practices in a form that is accessible and effective for growing businesses.
               </p>
             </div>
 
             {/* What Makes Us Different */}
-            <div className="mb-6 sm:mb-8">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">What Makes Us Different</h3>
+            <div className="mb-6 md:mb-8">
+              <h3 className="text-2xl md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">What Makes Us Different</h3>
               <div className="space-y-2.5 sm:space-y-3">
                 {differentiators.map((item, index) => (
                   <div key={index} className="flex items-start">
                     <CheckCircleIcon className="h-5 w-5 sm:h-6 sm:w-6 text-green-500 mr-2 sm:mr-3 flex-shrink-0 mt-0.5" />
-                    <span className="text-sm sm:text-base text-gray-700">{item}</span>
+                    <span className="text-lg text-gray-700">{item}</span>
                   </div>
                 ))}
               </div>
@@ -113,18 +113,18 @@ const About = () => {
 
             {/* Mission & Vision */}
             <div className="bg-blue-100 p-4 sm:p-6 rounded-lg">
-              <h3 className="text-lg md:text-xl font-semibold text-gray-900 mb-3">Our Mission & Vision</h3>
+              <h3 className=" text-2xl font-semibold text-gray-900 mb-3">Our Mission & Vision</h3>
               <div className="space-y-3 sm:space-y-4">
                 <div>
-                  <h4 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">Mission</h4>
-                  <p className="text-gray-600 text-sm md:text-base">
+                  <h4 className="font-medium text-gray-900 mb-1 text-lg">Mission</h4>
+                  <p className="text-gray-600 text-md">
                     To enable small and mid-sized organizations to turn technology into measurable business outcomes
                     by delivering solutions that are simple, scalable, and built for long-term success.
                   </p>
                 </div>
                 <div>
                   <h4 className="font-medium text-gray-900 mb-1 text-sm md:text-base">Vision</h4>
-                  <p className="text-gray-600 text-sm md:text-base">
+                  <p className="text-gray-600 text-md">
                     To be a trusted technology and operations partner for small and medium businesses,
                     helping them grow confidently through practical, affordable, and scalable IT and business solutions.
                   </p>
@@ -136,8 +136,8 @@ const About = () => {
           {/* Right Column */}
           <div>
             <div className="bg-gray-50 p-6 sm:p-8 rounded-2xl">
-              <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Commitment</h3>
-              <p className="text-sm md:text-base text-gray-600 mb-4 sm:mb-6">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 sm:mb-6">Our Commitment</h3>
+              <p className="text-md text-gray-600 mb-4 sm:mb-6">
                 We are committed to helping small and medium organizations achieve operational excellence through
                 practical, scalable solutions that deliver real value.
               </p>
@@ -145,12 +145,12 @@ const About = () => {
               {/* Commitment Cards */}
               <div className="space-y-3 sm:space-y-4">
                 {commitments.map((commitment, index) => (
-                  <div key={index} className="flex items-start sm:items-center p-3 sm:p-4 bg-white rounded-lg hover:shadow-md transition-shadow">
-                    <div className="p-2 sm:p-3 bg-blue-100 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
+                  <div key={index} className="flex items-start sm:items-center  py-3 sm:p-4  md:bg-white rounded-lg hover:shadow-md transition-shadow">
+                    <div className="p-2 sm:p-4 bg-blue-100 rounded-lg mr-3 sm:mr-4 flex-shrink-0">
                       <commitment.icon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
                     </div>
                     <div>
-                      <div className="font-semibold text-gray-900 text-sm sm:text-base">{commitment.title}</div>
+                      <div className="font-semibold text-gray-900 text-md">{commitment.title}</div>
                       <div className="text-xs sm:text-sm text-gray-600">{commitment.description}</div>
                     </div>
                   </div>
@@ -161,7 +161,7 @@ const About = () => {
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                 <div className="flex items-start sm:items-center">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <div className="w-10 h-10 sm:w-14 sm:h-14 bg-blue-100 rounded-full flex items-center justify-center">
                       <span className="text-blue-600 font-bold text-sm md:text-base">27+</span>
                     </div>
                   </div>

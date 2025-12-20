@@ -99,7 +99,7 @@ const Footer = () => {
           <p className="text-gray-400 text-center md:text-left">
   © {new Date().getFullYear()} Scepterra. All rights reserved.
 </p>
-            <div className="flex space-x-6">
+            <div className="flex space-x-4">
               <a  className="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
               <a  className="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
               <a  className="text-gray-400 hover:text-white transition-colors duration-300">Cookie Policy</a>

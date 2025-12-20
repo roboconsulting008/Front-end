@@ -112,7 +112,7 @@ const App = () => {
       <ProvenProcessSection/>
       <Projects />
       {/* <Team /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Footer />
 
