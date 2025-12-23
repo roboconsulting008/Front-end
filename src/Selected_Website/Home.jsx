@@ -54,7 +54,7 @@ const Home = () => {
             </div>
           </div>
           
-          <div className="relative flex justify-end animate-fadeInRight">
+          <div className="relative flex justify-around lg:justify-end animate-fadeInRight p-2">
             {/* Animated glitter border container */}
             <div className="relative p-1 rounded-3xl shadow-2xl w-4/5 transform rotate-4 transition-all duration-500 animate-borderGlitter">
               {/* Sparkle ball moving around the border */}
@@ -65,7 +65,7 @@ const Home = () => {
                 <img
                   src="https://ik.imagekit.io/49jambkmh/website%20/ChatGPT%20Image%20Dec%2022,%202025,%2008_27_18%20PM.png"
                   alt="Professional IT Solutions"
-                  className="w-full h-[500px] object-cover rounded-2xl"
+                  className="w-full md:h-[500px] h-300px object-cover rounded-2xl"
                 />
               </div>
             </div>
