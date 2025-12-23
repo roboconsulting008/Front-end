@@ -28,12 +28,12 @@ function Bgscreen() {
           className="relative h-full flex flex-col justify-center items-center text-center px-4 p-5"
           style={{ zIndex: 10 }}
         >
-          {/* Play Button */}
+          {/* Play Button
           <div className="mt-14 mb-6">
             <button className="bg-orange-500 hover:bg-orange-600 text-white p-4 rounded-full transform hover:scale-110 transition-all duration-300 shadow-lg">
               <Play className="w-6 h-6" fill="currentColor" />
             </button>
-          </div>
+          </div> */}
           
           {/* Main Heading */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 max-w-4xl leading-tight">
@@ -65,7 +65,7 @@ function Bgscreen() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 py-8 px-6">
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-              25+ 
+              27+ 
               </div>
               <div className="text-gray-600 font-medium">Years of Experience</div>
             </div>
@@ -77,15 +77,15 @@ function Bgscreen() {
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-              Global
+               SMB
               </div>
-              <div className="text-gray-600 font-medium">Delivery & Support</div>
+              <div className="text-gray-600 font-medium">Focused Solutions</div>
             </div>
             <div className="text-center">
               <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
-                15+
+              Global
               </div>
-              <div className="text-gray-600 font-medium">Years Experience</div>
+              <div className="text-gray-600 font-medium">Delivery & Support</div>
             </div>
           </div>
         </div>
